@@ -25,6 +25,7 @@ Route::group(['middleware'=>'auth:api'], function(){
 
     Route::post('/assets/search', [AssetController::class, 'search']);
     Route::post('/assets', [AssetController::class, 'store']);
+    Route::get('/assets', [AssetController::class, 'index']);
     Route::get('/assets/{asset}', [AssetController::class, 'show']);
     Route::put('/assets/{asset}', [AssetController::class, 'update']);
     Route::delete('/assets/{asset}', [AssetController::class, 'destroy']);

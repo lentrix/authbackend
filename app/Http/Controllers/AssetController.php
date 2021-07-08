@@ -55,4 +55,9 @@ class AssetController extends Controller
         $asset->delete();
         return response()->json(['message'=>'Asset deleted.'],202);
     }
+
+    public function index() {
+        $assets = Asset::orderBy('name')->get();
+        return response()->json($assets, 200);
+    }
 }
